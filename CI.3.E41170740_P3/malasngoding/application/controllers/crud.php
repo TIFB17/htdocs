@@ -13,6 +13,9 @@ class Crud extends CI_Controller{
 	function index(){
 		$data['user'] = $this->m_data->tampil_data()->result();
 		$this->load->view('v_tampil',$data);
+		if ($this->session->userdata('status')!="login") {
+			redirect (base_url("index.php/login"));
+		}
 	}
  
 	function tambah(){
@@ -64,5 +67,8 @@ class Crud extends CI_Controller{
 	$this->m_data->update_data($where,$data,'user');
 	redirect('crud/index');
 }
- 
+ function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('index.php/login'));
+	}
 }
