@@ -5,19 +5,10 @@ class Belajar2 extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
-		
+		$this->load->helper('html');
 	}
  
-	public function index(){
-		echo "ini method index pada controller belajar | cara membuat controller pada codeigniter TokoBuah.com";
+	public function index(){		
+		$this->load->view('view_belajar2');
 	}
- 
-	public function halo(){				
-		$data = array(
-			'judul' => "Cara Membuat View Pada CodeIgniter",
-			'tutorial' => "CodeIgniter"
-			);
-		$this->load->view('view_belajar2', $data);
-	}
- 
 }
