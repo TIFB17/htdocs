@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class nyimenk extends CI_Controller {
+class tokobuah extends CI_Controller {
  
 	public function itu(){
 		echo "Segment 1 adalah = " . $this->uri->segment('1') . "<br/>";		
